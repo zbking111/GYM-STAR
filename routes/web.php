@@ -141,3 +141,8 @@ Route::get('top-like',[
 	'as' => 'top_like',
 	'uses' => 'UserController@getTopLike'
 ]);
+
+Route::get('all-coachs',[
+	'as' => 'all_coachs',
+	'uses' => 'UserController@getAllCoachs'
+]);

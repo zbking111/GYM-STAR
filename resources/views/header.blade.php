@@ -14,6 +14,7 @@
         
         @if(Auth::check())
         <li><a href="{{ route('all_programs') }}">PROGRAM</a></li>
+        <li><a href="{{ route('all_coachs') }}">COACH</a></li>
         <li><a href="{{ route('all_blogs') }}">BLOG</a></li>
 {{--         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRAINING<span class="caret"></span></a>

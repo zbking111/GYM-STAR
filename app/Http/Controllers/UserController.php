@@ -462,4 +462,10 @@ class UserController extends Controller
 		return view('page.top_like',compact(['program','practice','coach','count','like','comment']));
 	}
 
+	public function getAllCoachs()
+	{
+		$coachs = User::whereIn('aim',[2,3])->paginate();
+		return view('page.all_coachs',compact(['coachs']));
+	}
+
 }

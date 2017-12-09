@@ -31,8 +31,7 @@ Result Search
 					<img src="{{$p->image}}" alt="Image">
 				</div>
 				
-				<br>
-				<a href=""><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+
 				<br>
 				@if(!isset($practice))
 				<a href="{{route('subscribe',$p->id)}}">Subscribe</a>
@@ -45,7 +44,7 @@ Result Search
 						break;
 					}
 				}
-				if($check == 1) echo "Subscribed";
+				if($check == 1) echo "<strong>SUBSCRIBED</strong>";
 				?>
 				@if($check == 0)
 				<h4><a href="{{route('subscribe',$p->id)}}">Subscribe now >> </a></h4>

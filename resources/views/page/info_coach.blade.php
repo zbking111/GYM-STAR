@@ -6,6 +6,8 @@ All programs
 @section('content')
 <div class="col-sm-8 text-left"> 
 
+	@if(isset($training))
+
 	<div align="center">
 		<h3>Coach's Profile</h3>
 		<hr>
@@ -72,6 +74,9 @@ All programs
 
 	</div>
 	<div align="center" class="row">{{ $training->appends(Request::all())->links() }}</div>
+	@else
+	<strong>Sorry we have not updated yet. Please come back later.</strong>
+	@endif
 
 </div>
 
