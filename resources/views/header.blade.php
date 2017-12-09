@@ -30,7 +30,7 @@
           <ul class="dropdown-menu">
             <li><a href={{ route('mypage',Auth::user()->username) }}>My page</a></li>
             <li><a href={{ route('profile',Auth::user()->username) }}>My profile</a></li>
-            @if(Auth::user()->id != 1)
+            @if(Auth::user()->aim != 1)
             <li><a href={{ route('show_form_register_lesson') }}>Register lesson</a></li>
             @endif
             <li><a href="{{ route('logout') }}">Logout</a></li>
