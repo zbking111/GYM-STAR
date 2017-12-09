@@ -142,3 +142,14 @@ Route::get('all-coachs',[
 	'as' => 'all_coachs',
 	'uses' => 'UserController@getAllCoachs'
 ]);
+
+Route::get('show-form-register-lesson',[
+	'as' => 'show_form_register_lesson',
+	'uses' => 'UserController@showFormRegisterLesson'
+]);
+
+
+Route::get('register-lesson',[
+	'as' => 'register_lesson',
+	'uses' => 'UserController@registerLesson'
+]);

@@ -468,4 +468,37 @@ class UserController extends Controller
 		return view('page.all_coachs',compact(['coachs']));
 	}
 
+	public function showFormRegisterLesson()
+	{
+		$programs_hard = Program::where('level',3)->orderBy('title','asc')->get();
+		$programs_medium = Program::where('level',2)->orderBy('title','asc')->get();
+		$programs_light = Program::where('level',1)->orderBy('title','asc')->get();
+
+		$idUser = Auth::user()->id;
+		$trainings = Training::where('id_user',$idUser)->get();
+		return view('page.show_form_register_lesson',
+			compact(['programs_hard','programs_medium','programs_light','trainings']));
+
+	}
+
+	public function registerLesson(Request $request)
+	{
+		$countLesson = count($request->register_lesson);
+		if($countLesson == 0) {
+			return redirect()->route('show_form_register_lesson')->with('failed','Register failed');
+		}
+		$idUser = Auth::user()->id;
+		
+
+		for ($i=0; $i < $countLesson; $i++) { 
+			$training = new Training();
+			$training->id_user = $idUser;
+			$training->id_program = $request->register_lesson[$i];
+			$training->save();
+		}
+
+		return redirect()->route('show_form_register_lesson')->with('success','Register successfuly');
+
+	}
+
 }

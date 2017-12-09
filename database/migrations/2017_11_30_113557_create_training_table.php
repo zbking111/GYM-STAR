@@ -17,6 +17,7 @@ class CreateTrainingTable extends Migration
             $table->increments('id');
             $table->string('id_user')->nullable();
             $table->string('id_program')->nullable();
+            $table->timestamp();
         });
     }
 
