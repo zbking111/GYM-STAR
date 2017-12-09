@@ -89,7 +89,7 @@ class MainController extends Controller
 				$credentials = array('email'=>$req->email,'password'=>$req->password);
 
 
-				if(Auth::attempt($credentials)){
+				if(Auth::attempt($credentials,$req->remember)){
 
 					return redirect()->route('homepage');
 				}

@@ -52,6 +52,13 @@ Login
 							@endif	
 						</div>
 					</div>
+
+					<div class="form-group">
+						<div class="col-xs-offset-3 col-xs-10">
+							<input name="remember" type="checkbox" value="remember">
+							&nbsp; <strong>Remember me</strong>
+						</div>
+					</div>
 					
 
 					<div class="form-group">
