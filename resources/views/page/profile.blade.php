@@ -185,8 +185,8 @@
 									<label class="control-label col-sm-3">Aim <span class="text-danger">*</span></label>
 									<div class="col-md-8 col-sm-9">
 										<label><input name="aim" onclick="javascript: return false;" type="radio" value="1" @if($profile['0']->aim === "1") checked @endif> Practice </label><br>
-										<label><input name="aim" onclick="javascript: return false;" type="radio" value="2" @if($profile['0']->aim === "2") checked @endif > Coach </label><br>
-										<label><input name="aim" onclick="javascript: return false;" type="radio" value="3" @if($profile['0']->aim === "3") checked @endif > Both </label>
+										<label><input name="aim" type="radio" value="2" @if($profile['0']->aim === "2") checked @endif > Coach </label><br>
+										<label><input name="aim" type="radio" value="3" @if($profile['0']->aim === "3") checked @endif > Both </label>
 										   
 									</div>
 								</div>
