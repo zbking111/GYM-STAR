@@ -61,7 +61,7 @@ All programs
 					}
 					if($check == 1) echo "Subscribed";
 					?>
-					@if($check == 0)
+					@if(($check == 0)&& (Auth::user()->aim != 2))
 					<h4><a href="{{route('subscribe',$t->id_program)}}">Subscribe now >> </a></h4>
 					@endif
 					@endif

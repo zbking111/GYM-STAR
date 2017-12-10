@@ -67,7 +67,9 @@ Programs Details
 		@if($practiced)
 		<h4>Subscribed</h4>
 		@else
+		@if((Auth::user()->aim != 2))
 		<h3><a href="{{ route('subscribe',$p[0]->id) }}">Subscribe now >> </a></h3>
+		@endif
 		@endif
 		<hr>
 

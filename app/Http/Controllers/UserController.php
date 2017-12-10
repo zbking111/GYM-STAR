@@ -63,13 +63,16 @@ class UserController extends Controller
 
 	public function getMyPage($username)	
 	{
+		if(Auth::user()->aim == 2) {
+			return redirect()->route('all_programs');
+		}
 		$id_user = Auth::user()->id ;
 		// //$practice = Practice::where('id_user',$id_user)->pluck('id_program')->toArray();
 		// $program = Practice::where('id_user',$id_user)->get();
 		// 	// ->programs()->paginate(5);
 		// var_dump($program);
 		// exit;
-		// 
+
 		$count_program = count(DB::table('practice')
 			->join('programs', 'practice.id_program', '=', 'programs.id')
 			->where('practice.id_user',$id_user)

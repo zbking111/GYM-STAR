@@ -192,7 +192,9 @@
     <div class="container-fluid text-center">    
       <div class="row content">
         <div class="col-sm-2 sidenav">
+          @if((Auth::user()->aim != 2))
           <p><a href="{{ route('mypage',Auth::user()->username)}}">My Programs</a></p>
+          @endif
           <p><a href="{{ route('myblog',Auth::user()->username)}}">My Blogs</a></p>
           <p><a href="{{ route('top_like') }}">Top Program</a></p>
         </div>

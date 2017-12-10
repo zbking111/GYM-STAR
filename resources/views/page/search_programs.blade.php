@@ -46,7 +46,7 @@ Result Search
 				}
 				if($check == 1) echo "<strong>SUBSCRIBED</strong>";
 				?>
-				@if($check == 0)
+				@if($check == 0 && (Auth::user()->aim != 2))
 				<h4><a href="{{route('subscribe',$p->id)}}">Subscribe now >> </a></h4>
 				@endif
 				@endif
