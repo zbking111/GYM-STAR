@@ -337,6 +337,11 @@ class UserController extends Controller
 		->where('training.id_user',$idCoach)
 		->paginate(3);
 
+		if(count($training) == 0) {
+			$message = 'This coach has not yet registered for any courses';
+			return view('page.info_coach',compact(['message']));
+		}
+
 		$idProgram = Training::where('id_user',$idCoach)->pluck('id_program')->toArray();
 
 		$coach = DB::table('training')
@@ -462,11 +467,11 @@ class UserController extends Controller
 		return view('page.top_like',compact(['program','practice','coach','count','like','comment']));
 	}
 
-	public function getAllCoachs()
-	{
-		$coachs = User::whereIn('aim',[2,3])->paginate();
-		return view('page.all_coachs',compact(['coachs']));
-	}
+	// public function getAllCoachs()
+	// {
+	// 	$coachs = User::whereIn('aim',[2,3])->paginate();
+	// 	return view('page.all_coachs',compact(['coachs']));
+	// }
 
 	public function showFormRegisterLesson()
 	{
@@ -498,6 +503,13 @@ class UserController extends Controller
 		}
 
 		return redirect()->route('show_form_register_lesson')->with('success','Register successfuly');
+
+	}
+
+	public function getAllCoachs()
+	{
+		$coachs = User::where('aim','<>', 1)->orderBy('fullname','asc')->paginate(5);
+		return view('page.all_coachs',compact(['coachs']));
 
 	}
 

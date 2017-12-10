@@ -13,7 +13,11 @@ All Coachs
 		<div class="media">
 			<div class="media-body">
 				<a href="{{ route('info_coach',$coach->id) }}">Name: {{ $coach->fullname }}</a>
-
+				<p>Email: {{$coach->email}}</p>
+				<p>Birth: {{$coach->birth}}</p>
+				<p>Weight: {{$coach->weight}}</p>
+				<p>Address: {{$coach->address}}</p>
+				<p>Job #: {{$coach->job}}</p>
 			</div>
 		</div>
 	</div>
