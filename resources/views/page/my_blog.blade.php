@@ -79,7 +79,7 @@ My Blog
 						<span class="glyphicon glyphicon-star"></span>
 						<span class="glyphicon glyphicon-star-empty"></span>
 					</li>
-					<li>|</li>
+					<li>|</li>	
 					<li>
 						<!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
 						<span><i class="fa fa-facebook-square"></i></span>

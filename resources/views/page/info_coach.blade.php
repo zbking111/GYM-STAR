@@ -27,6 +27,9 @@ All programs
 		@foreach ($training as $t)
 		<div class="well">
 			<div class="media">
+				<a class="pull-left" href="{{ route('info_program',$t->id) }}">
+					<img src="{{$t->image}}" class="img-responsive" style="width:350px" alt="No Image">
+				</a>
 				<div class="media-body">
 					<h3><a href="{{ route('info_program',$t->id) }}">Title : {{ $t->title}}</a></h3>
 					<h4>
@@ -43,9 +46,9 @@ All programs
 						@endforeach
 
 					</p>
-					<div align="center">
+					{{-- <div align="center">
 						<img src="{{$t->image}}" alt="Image">
-					</div>
+					</div> --}}
 
 					<br>
 					@if(!isset($practice))

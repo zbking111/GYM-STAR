@@ -16,6 +16,9 @@ All programs
 	@foreach($program as $p)
 	<div class="well">
 		<div class="media">
+			<a class="pull-left" href="{{ route('info_program',$p->id) }}">
+				<img src="{{$p->image}}" class="img-responsive" style="width:350px" alt="No Image">
+			</a>
 			<div class="media-body">
 				
 				<h3><a href="{{ route('info_program',$p->id) }}">Title : {{ $p->title}}</a></h3>
@@ -33,9 +36,9 @@ All programs
 					@endforeach
 
 				</p>
-				<div align="center">
+				{{-- <div align="center">
 					<img src="{{$p->image}}" alt="Image">
-				</div>
+				</div> --}}
 				<br>
 				<ul class="list-inline list-unstyled">
 					@if(isset($like))
