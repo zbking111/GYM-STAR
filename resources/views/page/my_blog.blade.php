@@ -7,7 +7,18 @@ My Blog
 <div class="col-sm-8 text-left"> 
 	<center><h1>My Blog</h1></center>
 
-	<form action="{{ route('post_blog') }}" method = "POST">
+	<!-- xuat loi neu co -->
+	@if (count($errors) > 0)
+	<div class="alert alert-danger">
+		<ul>
+			@foreach ($errors->all() as $error)
+			<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	</div>
+	@endif
+
+	<form action="{{ route('post_blog') }}" method = "POST" enctype="multipart/form-data">
 		{{csrf_field()}}
 		<div class="form-group">
 			<label class="control-label">Title</label><br>			
@@ -18,6 +29,11 @@ My Blog
 		<div class="form-group">
 			<label for="content">Content:</label>
 			<textarea class="form-control" rows="5" name="content" id="content"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="image">Image:</label>
+			<input type="file" class="form-control" name="image" id="image">
 		</div>
 
 		<div class="form-group">            
@@ -34,8 +50,8 @@ My Blog
 	@foreach($blog as $post)
 	<div class="well">
 		<div class="media">
-			<a class="pull-left" href="#">
-				<img class="media-object" src="http://placekitten.com/150/150">
+			<a class="pull-left" href="{{ route('detail_blog',$post->id) }}">
+				<img src="../upload/{{$post->image}}" class="img-responsive" style="width:200px" alt="No Image">
 			</a>
 			<div class="media-body">
 				<a href="{{ route('detail_blog',$post->id) }}"><h4 class="media-heading">{{$post->title}}</h4></a>

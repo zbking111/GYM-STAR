@@ -9,8 +9,8 @@ All Blog
 	@foreach($user_blog as $ub)
 	<div class="well">
 		<div class="media">
-			<a class="pull-left" href="#">
-				<img class="media-object" src="http://placekitten.com/150/150">
+			<a class="pull-left" href="{{ route('detail_blog',$ub->id) }}">
+				<img src="../upload/{{$ub->image}}" class="img-responsive" style="width:200px" alt="No Image">
 			</a>
 			<div class="media-body">
 				<a href="{{ route('detail_blog',$ub->id) }}"><h4 class="media-heading">{{$ub->title}}</h4></a>

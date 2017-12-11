@@ -5,14 +5,14 @@ Detail Blog
 @section('content')
 
 <div class="col-sm-8 text-left">
-	<h1>Detail blog</h1>
 	<div class="well">
 		<div class="media">
-			<a class="pull-left" href="#">
-				<img class="media-object" src="http://placekitten.com/150/150">
-			</a>
+			<div class="pull-left" >
+				<img src="../upload/{{$blog[0]->image}}" class="img-responsive" style="width:100% height=100% " alt="No Image">
+			</div>
 			<div class="media-body">
-				<a href="{{ route('detail_blog',$blog[0]->id) }}"><h4 class="media-heading">{{$blog[0]->title}}</h4></a>
+				<hr>
+				<h2 class="media-heading"><strong>{{$blog[0]->title}}</strong></h2>
 				<p class="text-right">by <b>{{$user[0]->fullname}}</b></p>
 				<p>{{$blog[0]->content}}</p>
 				<ul class="list-inline list-unstyled">
