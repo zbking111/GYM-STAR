@@ -153,3 +153,4 @@ Route::get('register-lesson',[
 	'as' => 'register_lesson',
 	'uses' => 'UserController@registerLesson'
 ]);
+

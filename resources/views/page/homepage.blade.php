@@ -61,4 +61,71 @@ GYM STAR
   </a>
 </div>
 
+<center><h2>Các dịch vụ luyện tập và <br class='hidden-xs'>những cách giảm cân hiệu quả</h2>
+</center>
+
+<div class="row">
+  <div class="col-sm-4">
+    <center><h3>DANCE </h3></center>
+    <img src="image/services/dance-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+    
+  </div>
+  <div class="col-sm-4">
+    <center><h3>Huấn Luyện cá nhân</h3> </center>  
+    <img src="image/services/huong-dan-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+
+  </div>
+
+  <div class="col-sm-4"> 
+    <center><h3> KICKFIT</h3></center>
+    <img src="image/services/mma-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+
+  </div>
+
+  <div class="col-sm-4">
+    <center><h3>GIẢM CĂNG CƠ</h3></center>
+    <img src="image/services/tap-the-duc-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+    
+  </div>
+  <div class="col-sm-4">
+    <center><h3>Giảm Cân</h3></center> 
+    <img src="image/services/the-duc-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+
+  </div>
+
+  <div class="col-sm-4">
+    <center><h3>YOGA </h3></center> 
+    <img src="image/services/yoga-giam-can.jpg" class="img-responsive" style="width:100%" alt="Image">
+
+  </div>
+
+</div>
+<br>
+
+<center><h2>Video tutorials</h2>
+</center>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YdB1HMCldJY" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="col-sm-6">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/fcN37TxBE_s" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+   </div>
+    <br>
+   <div class="col-sm-6">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/11WLF24-5iM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <div class="col-sm-6">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/M9Z4YsinNMk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+</div>
+
+
+
+
 @endsection
