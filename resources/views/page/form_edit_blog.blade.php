@@ -37,11 +37,13 @@ Detail Blog
 		</div>
 
 		<div class="form-group">            
-			<input name="Submit" type="submit" value="Post" class="btn btn-primary">
+			<input name="Submit" type="submit" value="Save" class="btn btn-primary">
 			<input name="reset" type="reset" value="Reset" class="btn btn-primary">
 		</div>
 
 	</form>
+	@if(Session::has('success'))<div class="alert alert-success" align="center">{{ Session::get('success')}}</div>
+	@endif
 
 	<script type="text/javascript">
 		$("#blog").validate({
@@ -67,8 +69,5 @@ Detail Blog
 
 		})
 	</script>
-
-	<hr>
-
 </div>
 @endsection

@@ -47,6 +47,8 @@ My Blog
 		</div>
 
 	</form>
+	@if(Session::has('success'))<div class="alert alert-success" align="center">{{ Session::get('success')}}</div>
+	@endif
 	<hr>
 
 	@if(!isset($blog))
@@ -57,7 +59,7 @@ My Blog
 	<div class="well">
 		<div class="media">
 			<a class="pull-left" href="{{ route('detail_blog',$post->id) }}">
-				<img src="../upload/{{$post->image}}" class="img-responsive" style="width:200px" alt="No Image">
+				<img src="../upload/{{$post->image}}" class="img-responsive" style="width:300px" alt="No Image">
 			</a>
 			<div class="media-body">
 				<a href="{{ route('detail_blog',$post->id) }}"><h4 class="media-heading">{{$post->title}}</h4></a>
@@ -88,6 +90,8 @@ My Blog
 					</li>
 					<li>|</li>
 					<li><a href="{{ route('show_form_edit_blog',$post->id) }}"><span class="glyphicon glyphicon-edit">Edit</span></a></li>
+					<li>|</li>
+					<li><a href="{{ route('blog.delete',$post->id) }}"><span class="glyphicon glyphicon-remove">Delete</span></a></li>
 				</ul>
 			</div>
 		</div>

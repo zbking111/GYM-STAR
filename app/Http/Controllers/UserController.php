@@ -550,7 +550,14 @@ class UserController extends Controller
 			$post->title = $request->title;
 			$post->content = $request->content;
 			$post->save();
-			return redirect()->route('detail_blog',$id);
+			return redirect()->back()->with('success','Updated Successfully');
+		}
+
+		public function deleteBlog($id)
+		{
+			$blog = Blog::find($id);
+			$blog->delete();
+			return redirect()->back()->with('success',"Deleted");
 		}
 
 	}

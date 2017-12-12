@@ -164,3 +164,8 @@ Route::post('blog-edit/{id}',[
 	'uses' => 'UserController@editBlog'
 ]);
 
+Route::get('delete-blog/{id}',[
+	'as' => 'blog.delete',
+	'uses' => 'UserController@deleteBlog'
+]);
+
