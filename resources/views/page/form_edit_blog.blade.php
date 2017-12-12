@@ -52,7 +52,7 @@ Detail Blog
 					required:true,
 					minlength: 5,
 
-				}
+				},
 				content:{
 					required:true,
 					minlength: 5,

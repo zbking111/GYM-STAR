@@ -105,10 +105,11 @@ My Blog
 			rules:{
 				title:{
 					required:true,
-					minlength: 5
-					maxlenght: 100,
+					minlength: 5,
+					maxlength: 150,
 					
-				}
+				},
+
 				content:{
 					required:true,
 					minlength: 5,
