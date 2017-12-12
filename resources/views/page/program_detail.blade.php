@@ -4,7 +4,13 @@ Programs Details
 @endsection
 
 @section('content')
-<div class="col-sm-8 text-left"> 
+<div class="col-sm-8 text-left">
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			{{ $p[0]->title}}
+		</h3>
+	</div>  
 	<div class="well">
 		<div class="media">
 			<div class="media-body">

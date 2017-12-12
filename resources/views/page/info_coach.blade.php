@@ -9,8 +9,14 @@ All programs
 	@if(isset($message))
 	<h1>{{ $message }}</h1>
 	@else
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			<a href="{{ route('all_coachs') }}">Coach</a> /
+			Profile
+		</h3>
+	</div> 
 	<div align="center">
-		<h3>Coach's Profile</h3>
 		<hr>
 		<h4><label class="control-label">Fullname : {{ $training[0]->fullname }}</label></h4>
 		<h4><label class="control-label">Email : {{ $training[0]->email }}</label></h4>

@@ -5,7 +5,12 @@ My Blog
 @section('content')
 
 <div class="col-sm-8 text-left"> 
-	<center><h1>My Blog</h1></center>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			My Blog
+		</h3>
+	</div>
 
 	<!-- xuat loi neu co -->
 	@if (count($errors) > 0)
@@ -18,17 +23,18 @@ My Blog
 	</div>
 	@endif
 
-	<form action="{{ route('post_blog') }}" method = "POST" enctype="multipart/form-data">
+	<form action="{{ route('post_blog') }}" method = "POST" enctype="multipart/form-data" id="blog">
 		{{csrf_field()}}
 		<div class="form-group">
 			<label class="control-label">Title</label><br>			
 			<input type="text" class="form-control" name="title" id="title" placeholder="Enter your Blog's Title" required="" value="">
-			
+			<span class="text-danger" id="error-title"></span>
 		</div>
 
 		<div class="form-group">
 			<label for="content">Content:</label>
 			<textarea class="form-control" rows="5" name="content" id="content"></textarea>
+			<span class="text-danger" id="error-content"></span>
 		</div>
 
 		<div class="form-group">
@@ -78,14 +84,10 @@ My Blog
 						<span class="glyphicon glyphicon-star"></span>
 						<span class="glyphicon glyphicon-star"></span>
 						<span class="glyphicon glyphicon-star-empty"></span>
+
 					</li>
-					<li>|</li>	
-					<li>
-						<!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
-						<span><i class="fa fa-facebook-square"></i></span>
-						<span><i class="fa fa-twitter-square"></i></span>
-						<span><i class="fa fa-google-plus-square"></i></span>
-					</li>
+					<li>|</li>
+					<li><a href="{{ route('show_form_edit_blog',$post->id) }}"><span class="glyphicon glyphicon-edit">Edit</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -93,6 +95,33 @@ My Blog
 	@endforeach
 	<div align="center" class="row">{{ $blog->appends(Request::all())->links() }}</div>
 	@endif
+
+	<script type="text/javascript">
+		$("#blog").validate({
+			rules:{
+				title:{
+					required:true,
+					minlength: 5
+					maxlenght: 100,
+					
+				}
+				content:{
+					required:true,
+					minlength: 5,
+					
+				},
+			},
+			messages:{
+
+			},
+
+			errorPlacement: function(error, element) {
+				error.appendTo('#error-' + element.attr('id'));
+			}
+
+
+		})
+	</script>
 	
 </div>
 

@@ -6,69 +6,18 @@
 @endsection
 @section('content')
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="image/slide/gym1.jpg" alt="gym1" width="1200" height="700">
-      <div class="carousel-caption">
-        <h2>Practice Health</h2>
-        <p>Health is very important.</p>
-      </div>      
-    </div>
-
-    <div class="item">
-      <img src="image/slide/gym2.jpg" alt="gym2" width="1200" height="700">
-      <div class="carousel-caption">
-        <h2>Practice Health</h2>
-        <p>Health is very important.</p>
-      </div>      
-    </div>
-    
-    <div class="item">
-      <img src="image/slide/gym3.jpg" alt="gym3" width="1200" height="700">
-      <div class="carousel-caption">
-        <h2>Practice Health</h2>
-        <p>Health is very important.</p>
-      </div>      
-    </div>
-
-    <div class="item">
-      <img src="image/slide/gym4.jpg" alt="gym4" width="1200" height="700">
-      <div class="carousel-caption">
-        <h2>Practice Health</h2>
-        <p>Health is very important.</p>
-      </div>      
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<section>      
-				<h1 class="entry-title"><span>@if(Auth::check())
-					{{ucfirst(Auth::user()->username)}}'s Profile
-				@endif</span> </h1>
+			<section>
+				<div>
+					<h3>
+						<a href="{{ route('homepage') }}">Home</a> /
+						<span>@if(Auth::check())
+							{{ucfirst(Auth::user()->username)}}'s Profile
+						@endif</span>
+					</h3>
+				</div> 
 				<hr>
 				<form action="{{route('update_profile')}}" class="form-horizontal" method="post" name="update_profile" id="update_profile" enctype="multipart/form-data" >
 					{{ csrf_field() }}
@@ -131,13 +80,13 @@
 									<div class="form-group">
 										<select name="mm" class="form-control">
 											<option value="{{date("m",strtotime($profile[0]->birth))}}">@if($profile[0]->birth != ""){{date("M",strtotime($profile[0]->birth))}}
-										@else Month @endif</option>
+											@else Month @endif</option>
 											<option value="01">Jan</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Apr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Aug</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>                </select>
 										</div>
 										<div class="form-group" >
 											<select name="yyyy" class="form-control">
 												<option value="{{date("Y",strtotime($profile[0]->birth))}}">@if($profile[0]->birth != ""){{date("Y",strtotime($profile[0]->birth))}}
-										@else Year @endif</option>
+												@else Year @endif</option>
 												<option value="1955" >1955 </option><option value="1956" >1956 </option><option value="1957" >1957 </option><option value="1958" >1958 </option><option value="1959" >1959 </option><option value="1960" >1960 </option><option value="1961" >1961 </option><option value="1962" >1962 </option><option value="1963" >1963 </option><option value="1964" >1964 </option><option value="1965" >1965 </option><option value="1966" >1966 </option><option value="1967" >1967 </option><option value="1968" >1968 </option><option value="1969" >1969 </option><option value="1970" >1970 </option><option value="1971" >1971 </option><option value="1972" >1972 </option><option value="1973" >1973 </option><option value="1974" >1974 </option><option value="1975" >1975 </option><option value="1976" >1976 </option><option value="1977" >1977 </option><option value="1978" >1978 </option><option value="1979" >1979 </option><option value="1980" >1980 </option><option value="1981" >1981 </option><option value="1982" >1982 </option><option value="1983" >1983 </option><option value="1984" >1984 </option><option value="1985" >1985 </option><option value="1986" >1986 </option><option value="1987" >1987 </option><option value="1988" >1988 </option><option value="1989" >1989 </option><option value="1990" >1990 </option><option value="1991" >1991 </option><option value="1992" >1992 </option><option value="1993" >1993 </option><option value="1994" >1994 </option><option value="1995" >1995 </option><option value="1996" >1996 </option><option value="1997" >1997 </option><option value="1998" >1998 </option><option value="1999" >1999 </option><option value="2000" >2000 </option><option value="2001" >2001 </option><option value="2002" >2002 </option><option value="2003" >2003 </option><option value="2004" >2004 </option><option value="2005" >2005 </option><option value="2006" >2006 </option>                </select>
 											</div>
 										</div>

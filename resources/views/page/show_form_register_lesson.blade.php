@@ -4,7 +4,13 @@ Register Lesson
 @endsection
 @section('content')
 
-<div class="container">	
+<div class="container">
+<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			Register lesson
+		</h3>
+	</div> 	
 	<form action="{{ route('register_lesson') }}" method="GET" onsubmit="return confirm('Are you sure?');">
 		
 		<div class="row">

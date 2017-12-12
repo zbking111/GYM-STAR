@@ -6,7 +6,12 @@ All Coachs
 @section('content')
 
 <div class="col-sm-8 text-left">
-	<strong><h3>All Coach : found {{ count($coachs)}} result</h3></strong>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			All coach : found {{ count($coachs)}} result
+		</h3>
+	</div>
 
 	@foreach($coachs as $coach)
 	<div class="well">

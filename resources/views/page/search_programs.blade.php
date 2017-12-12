@@ -5,8 +5,12 @@ Result Search
 
 @section('content')
 <div class="col-sm-8 text-left"> 
-
-	<h1>Search found : {{ $result_count}} result</h1>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			Search found : {{ $result_count}} result
+		</h3>
+	</div>  
 
 	@foreach($program as $p)
 	<div class="well">

@@ -9,7 +9,12 @@
 	@if(!isset($program))
 	<div><h1>You don't subscribe program</h1></div>
 	@else
-	<center><h3>My Programs: You subscribed {{$count_program}} program</h3></center>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			My Programs: You subscribed {{$count_program}} program
+		</h3>
+	</div> 
 	@foreach($program as $p)
 	<div class="well">
 		<div class="media">

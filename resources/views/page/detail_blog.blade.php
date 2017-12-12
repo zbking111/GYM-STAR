@@ -5,6 +5,7 @@ Detail Blog
 @section('content')
 
 <div class="col-sm-8 text-left">
+	
 	<div class="well">
 		<div class="media">
 			<div class="pull-left" >
@@ -19,7 +20,7 @@ Detail Blog
 					<li><span><i class="glyphicon glyphicon-calendar"></i> {{$blog[0]->created_at}} </span></li>
 					<li>|</li>
 					<span><i class="glyphicon glyphicon-comment"></i>
-					{{$count}}
+						{{$count}}
 					</span>
 					<li>|</li>
 					<li>

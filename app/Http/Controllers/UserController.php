@@ -174,7 +174,7 @@ class UserController extends Controller
 
 	}
 
-	public function getMyBlog($username)
+	public function getMyBlog()
 	{
 		$id = Auth::user()->id;
 		$count = count(Blog::where('id_user',$id)->get());
@@ -530,6 +530,27 @@ class UserController extends Controller
 			$coachs = User::where('aim','<>', 1)->orderBy('fullname','asc')->paginate(5);
 			return view('page.all_coachs',compact(['coachs']));
 
+		}
+
+		public function showFormEditBlog($id)
+		{
+			$post = Blog::find($id);
+
+			return view('page.form_edit_blog',compact(['post']));
+		}
+
+		public function editBlog(Request $request,$id)
+		{
+			$this->validate($request,[
+				'title' => 'required|min:5|max:100',
+				'content' => 'required|min:5',
+			]);
+
+			$post = Blog::find($id);
+			$post->title = $request->title;
+			$post->content = $request->content;
+			$post->save();
+			return redirect()->route('detail_blog',$id);
 		}
 
 	}

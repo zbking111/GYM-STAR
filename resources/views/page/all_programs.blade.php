@@ -6,7 +6,13 @@ All programs
 @section('content')
 
 <div class="col-sm-8 text-left">
-	<center><h3>All programs : found {{$count}} result</h3></center>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			All programs : found {{$count}} result
+		</h3>
+	</div>
+
 	<div>
 		<ul class="list-inline list-unstyled">
 			<li>Sort by :</li>

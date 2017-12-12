@@ -67,7 +67,7 @@ Route::get('subscribe/{id}',[
 	'uses' => 'UserController@subscribe'
 ]);
 
-Route::get('myblog/{username}',[
+Route::get('myblog',[
 	'as' => 'myblog',
 	'uses' => 'UserController@getMyBlog'
 ]);
@@ -98,12 +98,12 @@ Route::get('all-programs',[
 	'uses' => 'UserController@getAllPrograms'
 ]);
 
-Route::get('info-program/{idProgram}',[
+Route::get('all-programs/info-program/{idProgram}',[
 	'as' => 'info_program',
 	'uses' => 'UserController@getInfoProgram'
 ]);
 
-Route::get('info-coach/{idCoach}',[
+Route::get('all-coachs/info-coach/{idCoach}',[
 	'as' => 'info_coach',
 	'uses' => 'UserController@getInfoCoach'
 ]);
@@ -133,7 +133,7 @@ Route::post('comment-program/{id}',[
 	'uses' => 'UserController@commentProgram'
 ]);
 
-Route::get('top-like',[
+Route::get('all-programs/top-like',[
 	'as' => 'top_like',
 	'uses' => 'UserController@getTopLike'
 ]);
@@ -152,5 +152,15 @@ Route::get('show-form-register-lesson',[
 Route::get('register-lesson',[
 	'as' => 'register_lesson',
 	'uses' => 'UserController@registerLesson'
+]);
+
+Route::get('show-form-edit-blog/{id}',[
+	'as' => 'show_form_edit_blog',
+	'uses' => 'UserController@showFormEditBlog'
+]);
+
+Route::post('blog-edit/{id}',[
+	'as' => 'blog.edit',
+	'uses' => 'UserController@editBlog'
 ]);
 

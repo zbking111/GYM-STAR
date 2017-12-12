@@ -6,7 +6,13 @@ Top program sort by like
 @section('content')
 
 <div class="col-sm-8 text-left">
-	<center><h3>Top like</h3></center>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			<a href="{{ route('all_programs') }}">Program</a> /
+			Top Like
+		</h3>
+	</div>
 
 	@foreach($program as $p)
 	<div class="well">

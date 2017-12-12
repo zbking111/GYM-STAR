@@ -5,12 +5,18 @@ All Blog
 @section('content')
 
 <div class="col-sm-8 text-left">
-	<center><h3>Recent blogs : found {{$count}} blogs</h3></center>
+	<div>
+		<h3>
+			<a href="{{ route('homepage') }}">Home</a> /
+			My Blog : found {{$count}} blogs
+		</h3>
+	</div>
+
 	@foreach($user_blog as $ub)
 	<div class="well">
 		<div class="media">
 			<a class="pull-left" href="{{ route('detail_blog',$ub->id) }}">
-				<img src="../upload/{{$ub->image}}" class="img-responsive" style="width:200px" alt="No Image">
+				<img src="../upload/{{$ub->image}}" class="img-responsive" style="width:350px" alt="No Image">
 			</a>
 			<div class="media-body">
 				<a href="{{ route('detail_blog',$ub->id) }}"><h4 class="media-heading">{{$ub->title}}</h4></a>
