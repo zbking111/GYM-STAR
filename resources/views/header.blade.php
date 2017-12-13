@@ -10,20 +10,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('homepage') }}">HOME</a></li>
-        
+        <li><a href="{{ route('homepage') }}">HOME</a></li>       
         @if(Auth::check())
         <li><a href="{{ route('all_programs') }}">PROGRAM</a></li>
         <li><a href="{{ route('all_coachs') }}">COACH</a></li>
         <li><a href="{{ route('all_blogs') }}">BLOG</a></li>
-{{--         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRAINING<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">All programs</a></li>
-            <li><a href="#">All coach</a></li>
-          </ul>
-        </li> --}}
-
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span>{{Auth::user()->username}}
             <span class="caret"></span>

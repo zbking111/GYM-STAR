@@ -5,7 +5,6 @@ GYM STAR
 @endsection
 
 @section('content')
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -124,8 +123,4 @@ GYM STAR
   </div>
 </div>
 </div>
-
-
-
-
 @endsection

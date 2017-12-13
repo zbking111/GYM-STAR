@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>@yield('title')</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,19 +10,12 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{{--   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<link rel="stylesheet" href="{{Asset('css/bootstrap.min.css')}}"> --}}
 <script type="text/javascript" src="{{Asset('js/jquery-validate/jquery.validate.js')}}"></script>
 <style>
 body {
   font: 400 15px/1.8 Lato, sans-serif;
 }
-/*h3, h4 {
-  margin: 10px 0 30px 0;
-  letter-spacing: 10px;      
-  font-size: 20px;
-  color: #111;
-  }*/
+
   .container {
     padding: 50px 0px;
 
@@ -183,14 +175,11 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
-
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
   @include('header')
   @yield('content')
   @include('footer')
-
 </body>
 </html>

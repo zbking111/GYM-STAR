@@ -1,4 +1,5 @@
 @extends('userpage')
+
 @section('title')
 Programs Details
 @endsection
@@ -29,9 +30,6 @@ Programs Details
 
 	<div>
 		<h2>Actions :</h2>
-
-		
-
 		<form action="{{ route('completed_actions',$p[0]->id)}}" method="get">		
 			@foreach($action as $at)
 			<div class="checkbox">
@@ -44,8 +42,7 @@ Programs Details
 							break;
 						}
 					}
-					?>
-					
+					?>		
 					<input @if($check) checked="" disabled="" @endif
 					@if($practice[0]->updated_at == $practice[0]->created_at) disabled="" @endif 
 					type="checkbox" name="action_completed[]" value="{{$at->id}}">
@@ -89,7 +86,5 @@ Programs Details
 	<h4>Completed time: {{ $practice[0]->completed_time }} </h4> 
 	@endif
 	<hr>
-
 </div>
-
 @endsection

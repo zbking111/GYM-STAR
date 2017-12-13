@@ -1,14 +1,18 @@
 @extends('master')
+
 @section('title')
 Login
 @endsection
-@section('content')
 
+@section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<section>      
+			<section>
+
 				<h1 class="entry-title"><span>Login</span> </h1>
+				@if(Session::has('success'))<div class="alert alert-success" align="center">{{ Session::get('success')}}</div>
+				@endif
 				<hr>
 				<form action="{{route('login')}}" class="form-horizontal" method="post" name="register" id="register" enctype="multipart/form-data" >
 					{{ csrf_field() }}        

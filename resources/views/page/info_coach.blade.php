@@ -1,11 +1,11 @@
 @extends('userpage')
+
 @section('title')
 All programs
 @endsection
 
 @section('content')
 <div class="col-sm-8 text-left"> 
-
 	@if(isset($message))
 	<h1>{{ $message }}</h1>
 	@else
@@ -25,11 +25,9 @@ All programs
 		<h4><label class="control-label">Weight : {{ $training[0]->weight }}</label></h4>
 		<h4><label class="control-label">Job : {{ $training[0]->job }}</label></h4>
 	</div>
-
 	<div>
 		<hr>
-		<center><h3>Programs </h3></center>
-		
+		<center><h3>Programs </h3></center>		
 		@foreach ($training as $t)
 		<div class="well">
 			<div class="media">
@@ -45,17 +43,13 @@ All programs
 						@endif
 					</h4>
 
-					<p>Coach : |@foreach($coach as $c)
-
-						@if($t->id_program == $c->id_program)<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>@endif
-
+					<p>Coach : |
+						@foreach($coach as $c)
+						@if($t->id_program == $c->id_program)
+						<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>
+						@endif
 						@endforeach
-
 					</p>
-					{{-- <div align="center">
-						<img src="{{$t->image}}" alt="Image">
-					</div> --}}
-
 					<br>
 					@if(!isset($practice))
 					<a href="{{route('subscribe',$p->id)}}">Subscribe</a><hr>
@@ -73,20 +67,13 @@ All programs
 					@if(($check == 0)&& (Auth::user()->aim != 2))
 					<h4><a href="{{route('subscribe',$t->id_program)}}">Subscribe now >> </a></h4>
 					@endif
-					@endif
-
-					
+					@endif			
 				</div>
 			</div>
 		</div>
-		
 		@endforeach
-
 	</div>
 	<div align="center" class="row">{{ $training->appends(Request::all())->links() }}</div>
-	
 	@endif
-
 </div>
-
 @endsection

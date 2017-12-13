@@ -11,7 +11,6 @@ Result Search
 			Search found : {{ $result_count}} result
 		</h3>
 	</div>  
-
 	@foreach($program as $p)
 	<div class="well">
 		<div class="media">
@@ -25,20 +24,14 @@ Result Search
 					@elseif($p->level == 2 ){{ "Medium" }}
 					@elseif($p->level == 3 ){{ "Hard" }}
 					@endif
-				</h4>
-				
-				<p>Coach : |@foreach($coach as $c)
-
-					@if($p->id == $c->id_program)<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>@endif
-
+				</h4>		
+				<p>Coach : |
+					@foreach($coach as $c)
+					@if($p->id == $c->id_program)
+					<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>
+					@endif
 					@endforeach
-
 				</p>
-				{{-- <div align="center">
-					<img src="{{$p->image}}" alt="Image">
-				</div> --}}
-				
-
 				<br>
 				@if(!isset($practice))
 				<a href="{{route('subscribe',$p->id)}}">Subscribe</a>
@@ -61,10 +54,7 @@ Result Search
 			</div>
 		</div>
 	</div>
-	
 	@endforeach
 	<div align="center" class="row">{{ $program->appends(Request::all())->links() }}</div>
-	
 </div>
-
 @endsection

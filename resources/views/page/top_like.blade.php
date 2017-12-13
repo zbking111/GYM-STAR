@@ -13,15 +13,13 @@ Top program sort by like
 			Top Like
 		</h3>
 	</div>
-
 	@foreach($program as $p)
 	<div class="well">
 		<div class="media">
 			<a class="pull-left" href="{{ route('info_program',$p->id) }}">
 				<img src="{{$p->image}}" class="img-responsive" style="width:350px" alt="No Image">
 			</a>
-			<div class="media-body">
-				
+			<div class="media-body">		
 				<h3><a href="{{ route('info_program',$p->id) }}">Title : {{ $p->title}}</a></h3>
 				<h4>
 					Level : @if($p->level == 1 ){{ "Light" }}
@@ -29,17 +27,13 @@ Top program sort by like
 					@elseif($p->level == 3 ){{ "Hard" }}
 					@endif
 				</h4>
-
-				<p>Coach : |@foreach($coach as $c)
-
-					@if($p->id == $c->id_program)<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>@endif
-
+				<p>Coach : |
+					@foreach($coach as $c)
+					@if($p->id == $c->id_program)
+					<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>
+					@endif
 					@endforeach
-
 				</p>
-				{{-- <div align="center">
-					<img src="{{$p->image}}" alt="Image">
-				</div> --}}
 				<br>
 				<ul class="list-inline list-unstyled">
 					@if(isset($like))
@@ -50,10 +44,8 @@ Top program sort by like
 					if($p->id == $l->id_program)
 						$count++;
 					?>
-					@endforeach
-					
-					<b> <span class="glyphicon glyphicon-thumbs-up"></span> {{$count}} Liked&nbsp;&nbsp;&nbsp;&nbsp;</b>
-					
+					@endforeach		
+					<b> <span class="glyphicon glyphicon-thumbs-up"></span> {{$count}} Liked&nbsp;&nbsp;&nbsp;&nbsp;</b>	
 					@endif
 					<span><i class="glyphicon glyphicon-comment"></i>
 						<?php
@@ -85,12 +77,9 @@ Top program sort by like
 				<h4><a href="{{route('subscribe',$p->id)}}">Subscribe now >> </a></h4>
 				@endif
 				@endif
-
 			</div>
 		</div>
 	</div>
 	@endforeach
-
 </div>
-
 @endsection

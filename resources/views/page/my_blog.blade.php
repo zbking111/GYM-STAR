@@ -1,7 +1,9 @@
 @extends('userpage')
+
 @section('title')
 My Blog
 @endsection
+
 @section('content')
 
 <div class="col-sm-8 text-left"> 
@@ -12,7 +14,6 @@ My Blog
 		</h3>
 	</div>
 
-	<!-- xuat loi neu co -->
 	@if (count($errors) > 0)
 	<div class="alert alert-danger">
 		<ul>
@@ -29,6 +30,11 @@ My Blog
 			<label class="control-label">Title</label><br>			
 			<input type="text" class="form-control" name="title" id="title" placeholder="Enter your Blog's Title" required="" value="">
 			<span class="text-danger" id="error-title"></span>
+			@if ($errors->has('title'))
+			<span class="help-block">
+				<strong>{{ $errors->first('title') }}</strong>
+			</span>
+			@endif
 		</div>
 
 		<div class="form-group">
@@ -36,10 +42,21 @@ My Blog
 			<textarea class="form-control" rows="5" name="content" id="content"></textarea>
 			<span class="text-danger" id="error-content"></span>
 		</div>
+		@if ($errors->has('content'))
+		<span class="help-block">
+			<strong>{{ $errors->first('content') }}</strong>
+		</span>
+		@endif
 
 		<div class="form-group">
 			<label for="image">Image:</label>
 			<input type="file" class="form-control" name="image" id="image">
+			<span class="text-danger" id="error-image"></span>
+			@if ($errors->has('image'))
+			<span class="help-block">
+				<strong class="text-danger">{{ $errors->first('image') }}</strong>
+			</span>
+			@endif
 		</div>
 
 		<div class="form-group">            
@@ -115,6 +132,9 @@ My Blog
 					minlength: 5,
 					
 				},
+				image:{
+					required:true,
+				},
 			},
 			messages:{
 
@@ -123,11 +143,7 @@ My Blog
 			errorPlacement: function(error, element) {
 				error.appendTo('#error-' + element.attr('id'));
 			}
-
-
 		})
 	</script>
-	
 </div>
-
 @endsection

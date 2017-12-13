@@ -1,11 +1,11 @@
 @extends('userpage')
+
 @section('title')
 Programs Details
 @endsection
 
 @section('content')
 <div class="col-sm-8 text-left">
-
 	<div>
 		<h3>
 			<a href="{{ route('homepage') }}">Home</a> /
@@ -13,7 +13,6 @@ Programs Details
 			{{ $p[0]->title}}
 		</h3>
 	</div> 
-
 	<div class="well">
 		<div class="media">
 			<div class="media-body">
@@ -24,12 +23,12 @@ Programs Details
 					@elseif($p[0]->level == 3 ){{ "Hard" }}
 					@endif
 				</h4>
-				<p>Coach : |@foreach($coach as $c)
-
-					@if($p[0]->id == $c->id_program)<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>@endif
-
+				<p>Coach : |
+					@foreach($coach as $c)
+					@if($p[0]->id == $c->id_program)
+					<a href="{{ route('info_coach',$c->id) }}"> {{ $c->fullname }} |</a>
+					@endif
 					@endforeach
-
 				</p>
 				<div align="center">
 					<img src="{{$p[0]->image}}" alt="Image">
@@ -61,17 +60,13 @@ Programs Details
 				</div>
 			</div>
 		</div>
-
-
 		<div>
 			<h2>Actions :</h2>
 			@foreach($action as $at)													
 			<h4>- {{$at->content}}</h4>
 			@endforeach
-
 			<hr>
 		</div>
-
 		@if($practiced)
 		<h4>Subscribed</h4>
 		@else
@@ -80,7 +75,6 @@ Programs Details
 		@endif
 		@endif
 		<hr>
-
 		<form action="{{ route('comment_program',$p[0]->id) }}" method="post" id="comment" name="comment">
 			{{csrf_field()}}
 			<div class="form-group">
@@ -113,12 +107,9 @@ Programs Details
 					error.appendTo('#error-' + element.attr('id'));
 				}
 
-
 			})
 		</script>
-
 		<hr>
-
 		@if(isset($comments_programs))
 		@foreach($comments_programs as $cp)
 		<div>
@@ -129,9 +120,6 @@ Programs Details
 		<hr>
 		@endforeach
 		<div align="center" class="row">{{ $comments_programs->appends(Request::all())->links() }}</div>
-
 		@endif
-
 	</div>
-
 	@endsection

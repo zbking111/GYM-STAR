@@ -6,15 +6,13 @@ Register Lesson
 
 <div class="container">
 <div>
-		<h3>
-			<a href="{{ route('homepage') }}">Home</a> /
-			Register lesson
-		</h3>
-	</div> 	
+	<h3>
+		<a href="{{ route('homepage') }}">Home</a> /
+		Register lesson
+	</h3>
+</div> 	
 	<form action="{{ route('register_lesson') }}" method="GET" onsubmit="return confirm('Are you sure?');">
-		
 		<div class="row">
-			
 			<div class="col-sm-4">
 				<h3>Light</h3>
 				<hr>
@@ -28,14 +26,11 @@ Register Lesson
 					@endif
 					@endforeach
 					@endif
-
 					>
-
 					<strong> {{ $program->title }} </strong>
 				</div>
 				@endforeach
 			</div>
-
 			<div class="col-sm-4">
 				<h3>Medium</h3>
 				<hr>
@@ -74,8 +69,6 @@ Register Lesson
 				@endforeach
 			</div>
 		</div>
-
-
 		<div class="form-group">
 			<input id="submit" name="submit" type="submit" value="Register" class="btn btn-primary">
 			@if(Session::has('success'))<div class="text-success">{{Session::get('success')}}</div>	@endif
@@ -96,7 +89,6 @@ Register Lesson
 				$('#submit').attr('disabled',true);}
 			}
 		});
+</script>
 
-	</script>
-
-	@endsection
+@endsection

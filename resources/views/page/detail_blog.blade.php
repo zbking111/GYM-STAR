@@ -1,11 +1,11 @@
 @extends('userpage')
+
 @section('title')
 Detail Blog
 @endsection
-@section('content')
 
+@section('content')
 <div class="col-sm-8 text-left">
-	
 	<div class="well">
 		<div class="media">
 			<div class="pull-left" >
@@ -32,7 +32,6 @@ Detail Blog
 					</li>
 					<li>|</li>
 					<li>
-						<!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
 						<span><i class="fa fa-facebook-square"></i></span>
 						<span><i class="fa fa-twitter-square"></i></span>
 						<span><i class="fa fa-google-plus-square"></i></span>
@@ -53,12 +52,10 @@ Detail Blog
 			</span>
 			@endif
 		</div>
-
 		<div class="form-group">            
 			<input name="Submit" type="submit" value="Post" class="btn btn-primary">
 		</div>
 	</form>
-
 	<script type="text/javascript">
 		$("#comment").validate({
 			rules:{
@@ -77,9 +74,7 @@ Detail Blog
 
 		})
 	</script>
-
 	<hr>
-
 	@if(isset($comments_blogs))
 	@foreach($comments_blogs as $cb)
 	<div>
@@ -90,9 +85,6 @@ Detail Blog
 	<hr>
 	@endforeach
 	<div align="center" class="row">{{ $comments_blogs->appends(Request::all())->links() }}</div>
-
 	@endif
-
-
 </div>
 @endsection

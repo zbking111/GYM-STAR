@@ -1,10 +1,10 @@
 @extends('userpage')
+
 @section('title')
 All Coachs
 @endsection
 
 @section('content')
-
 <div class="col-sm-8 text-left">
 	<div>
 		<h3>
@@ -12,7 +12,6 @@ All Coachs
 			All coach : found {{ count($coachs)}} result
 		</h3>
 	</div>
-
 	@foreach($coachs as $coach)
 	<div class="well">
 		<div class="media">
@@ -27,9 +26,6 @@ All Coachs
 		</div>
 	</div>
 	@endforeach
-
 	<div align="center" class="row">{{ $coachs->appends(Request::all())->links() }}</div>
-
 </div>
-
 @endsection

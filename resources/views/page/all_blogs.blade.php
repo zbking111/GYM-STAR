@@ -1,17 +1,17 @@
 @extends('userpage')
+
 @section('title')
 All Blog
 @endsection
-@section('content')
 
+@section('content')
 <div class="col-sm-8 text-left">
 	<div>
 		<h3>
 			<a href="{{ route('homepage') }}">Home</a> /
-			My Blog : found {{$count}} blogs
+			Blog : found {{$count}} blogs
 		</h3>
 	</div>
-
 	@foreach($user_blog as $ub)
 	<div class="well">
 		<div class="media">
